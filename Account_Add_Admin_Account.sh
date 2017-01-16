@@ -1,9 +1,9 @@
 #!/bin/bash
 
 
-	JAMF='/usr/local/bin/jamf'
-password=7105052
-LocalAdmin=Admin
+JAMF='/usr/local/bin/jamf'
+password=$5
+LocalAdmin=$4
 CName=`scutil --get ComputerName`
 
 
@@ -15,7 +15,7 @@ CName=`scutil --get ComputerName`
 		echo "Finalizing-Script: User $LocalAdmin exists Deleting Account"
 		${JAMF} deleteAccount -username $LocalAdmin -deleteHomeDirectory
 		
-		deleteAccount -username UMCSPRAC -deleteHomeDirectory
+		deleteAccount -username $LocalAdmin -deleteHomeDirectory
 		
 		
 		fi
