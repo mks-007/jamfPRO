@@ -4,7 +4,7 @@
 JAMF='/usr/local/bin/jamf'
 password=$5
 LocalAdmin=$4
-CName=`scutil --get ComputerName`
+
 
 
 # Add Local admin Account
@@ -25,7 +25,7 @@ CName=`scutil --get ComputerName`
 		${JAMF}  createAccount -username $LocalAdmin -realname "Local-MacAdmin" -password $password -admin -hiddenUser
 		
 		User=""
-		User=`${JAMF} listUsers -showAll | grep  "<name>$ManagedAccount</name>" | wc -l`
+		User=`${JAMF} listUsers -showAll | grep  "<name>$LocalAdmin</name>" | wc -l`
 		if [ ${User} -eq 1 ]; then 
 			echo "Admin Account $LocalAdmin Created"
 			exit 0
