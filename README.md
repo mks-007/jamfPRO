@@ -1,2 +1,2 @@
-# Casper
-My Casper Scripts
+# jamfPRO
+My jamfPRO Scripts
